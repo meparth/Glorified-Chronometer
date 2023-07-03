@@ -67,7 +67,8 @@ p {
 }
 
 span {
-  font-family: 'Martian Mono el', monospace;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
   color: gray;
 
   @media (max-width: $breakpoint-desktop) {
