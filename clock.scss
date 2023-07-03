@@ -1,0 +1,197 @@
+/* variables */
+
+$breakpoint-unimaginably-low: 200px;
+$breakpoint-mobile: 400px;
+$breakpoint-desktop: 1024px;
+
+$day-diameter: 10vw;
+
+@media (min-width: $breakpoint-desktop) {
+  $day-diameter: 100px;
+}
+
+/* fonts */
+@font-face {
+  font-family: agdasima;
+  src: url('/fonts/Agdasima-Regular.ttf');
+}
+
+@font-face {
+  font-family: Roboto Mono;
+  src: url('/fonts/RobotoMono-Thin.ttf');
+}
+
+@font-face {
+  font-family: Martian Mono;
+  src: url('/fonts/MartianMono-Thin.ttf');
+}
+
+@font-face {
+  font-family: Martian Mono el;
+  src: url('/fonts/MartianMono-ExtraLight.ttf');
+}
+
+
+/* housekeeping stuffs */
+
+
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  // font-family: 'agdasima';
+  color: #535353;
+
+  font-family: 'Martian Mono', monospace;
+
+  @media (max-width: $breakpoint-desktop) {
+    font-size: 12vw;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 5em;
+  }
+
+}
+
+h2 {
+  font-size: 3.0vh;
+}
+
+p {
+  font-size: 2vmin;
+}
+
+span {
+  font-family: 'Martian Mono el', monospace;
+  color: gray;
+
+  @media (max-width: $breakpoint-desktop) {
+    font-size: 3vmin;
+  }
+}
+
+
+
+/* styling the main view */
+
+.container {
+  background-color: antiquewhite;
+  width: 100w;
+  height: 100vh;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .display {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // background-color: wheat;
+
+
+
+    // smaller than desktop
+    @media (max-width: $breakpoint-desktop) {
+      width: 80vw;
+    }
+
+    // desktop & beyond
+    @media (min-width: $breakpoint-desktop) {
+      width: 670px;
+    }
+
+
+
+    .main-clock {
+      // background-color: greenyellow;
+
+
+      .clock-text-holder {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 40px;
+      }
+    }
+
+    .days-wrapper {
+      // background-color: pink;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+
+      .day {}
+
+    }
+
+    .week-wrapper {
+      width: 100%;
+
+      @mixin generic-week {
+        height: 30px;
+        display: flex;
+      }
+
+      @mixin generic-day {
+        border: 1px solid black;
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .gc-week {
+        @include generic-week;
+
+        .gc-day {
+          @include generic-day;
+          border-color: #A76F6F;
+        }
+      }
+
+      .week-percentage {
+        height: 15px;
+        margin: 5px;
+
+        overflow: clip;
+
+        .week-percentage-slider {
+          height: 100%;
+          border-right: 3px solid rgba(67, 91, 102, 0.40);
+        }
+
+
+      }
+
+      .normal-week {
+        @include generic-week;
+
+        .normal-day {
+          @include generic-day;
+          border-color: #EAB2A0;
+        }
+      }
+    }
+
+  }
+}
+
+.day {
+  width: $day-diameter;
+  height: $day-diameter;
+  background-color: #789;
+  border-radius: 50%;
+  border-radius: 50%;
+
+}

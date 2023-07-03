@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> Glorified Chronometer </title>
+	<link rel="icon" type="image/x-icon" href="clock.ico">
+	<link rel='stylesheet' href='clock.css'>
+	<script src="jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="display">
+			<div class="main-clock">
+				<h1 class="clock-text-holder">
+					<div id="hour">00</div>
+					<div>:</div>
+					<div id="minute">00</div>
+					<div>:</div>
+					<div id="second">00</div>
+				</h1>
+			</div>
+			<div class="week-wrapper">
+				<div class="gc-week">
+					<div class="gc-day"><span>Mono</span></div>
+					<div class="gc-day"><span>Bemim</span></div>
+					<div class="gc-day"><span>Nwuna</span></div>
+					<div class="gc-day"><span>Nkyi</span></div>
+					<div class="gc-day"><span>Kuro</span></div>
+					<div class="gc-day"><span>Kwa</span></div>
+				</div>
+				<div id="week-percentage" class="week-percentage">
+					<div id="week-percentage-slider" class="week-percentage-slider"></div>
+				</div>
+				<div class="normal-week">
+					<div class="normal-day"> <span>Sun</span></div>
+					<div class="normal-day"> <span>Mon</span></div>
+					<div class="normal-day"> <span>Tues</span></div>
+					<div class="normal-day"> <span>Wed</span></div>
+					<div class="normal-day"> <span>Thu</span></div>
+					<div class="normal-day"> <span>Fri</span></div>
+					<div class="normal-day"> <span>Sat</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src='main-clock.js'></script>
+</body>
+
+</html>
